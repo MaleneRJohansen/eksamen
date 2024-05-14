@@ -1,9 +1,11 @@
 import React from 'react'
+import Type from './Type'
+import Pokemon from './Pokemon'
 
 function Home() {
   return (
     <div>
-      Home
+      <h1>Home</h1>
     </div>
   )
 }
