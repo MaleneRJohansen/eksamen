@@ -3,7 +3,7 @@ import React from 'react'
 function SearchResult() {
   return (
     <div>
-      Search results
+      <h1>Search results</h1>
     </div>
   )
 }

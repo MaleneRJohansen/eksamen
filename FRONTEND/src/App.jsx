@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Pokemon from './components/Pokemon'
 import Type from './components/Type'
 import Teams from './components/Teams'
+import SearchResult from './components/SearchResult'
 
 function App() {
 
@@ -13,9 +14,10 @@ function App() {
             <Navbar/>
             <Routes>
                 <Route path='/' element={<Home/>}/>
-                <Route path='/pokemon' element={<Pokemon/>}/>
+                <Route path='/pokemons/:pokemon' element={<Pokemon/>}/>
                 <Route path='/:type' element={<Type/>}/>
                 <Route path='/teams' element={<Teams/>}/>
+                <Route path='/searchresults/:pokemon' element={<SearchResult/>}/>
             </Routes>
         </>
     )
