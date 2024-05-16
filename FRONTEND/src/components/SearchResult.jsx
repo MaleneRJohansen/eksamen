@@ -2,9 +2,10 @@ import React from 'react'
 
 function SearchResult() {
   return (
-    <div>
+    <>
       <h1>Search results</h1>
-    </div>
+      <p>Skal vise søkeresultater eller at søket ikke finnes.</p>
+    </>
   )
 }
 

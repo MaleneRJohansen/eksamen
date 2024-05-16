@@ -4,9 +4,17 @@ import Pokemon from './Pokemon'
 
 function Home() {
   return (
-    <div>
+    <>
       <h1>Home</h1>
-    </div>
+      <section>
+        <h2>Main Pokemons</h2>
+        <p>Her skal de 9 først pokemons fra API-et vises</p>
+      </section>
+      <section>
+        <h2>Types</h2>
+        <p>Her skal alle typer vises</p>
+      </section>
+    </>
   )
 }
 

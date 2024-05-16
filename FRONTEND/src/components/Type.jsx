@@ -2,9 +2,10 @@ import React from 'react'
 
 function Type() {
   return (
-    <div>
+    <>
       <h1>Type</h1>
-    </div>
+      <p>Her vises alle pokemons under en bestemt type.</p>
+    </>
   )
 }
 
