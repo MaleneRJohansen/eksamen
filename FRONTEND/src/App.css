@@ -1,0 +1,26 @@
+/* Denne skal endres til layout senere */
+
+.grid-container {display: grid;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+  }
+  
+  .main-pokemons-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .types-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  .grid-item {
+    border: 1px solid;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .grid-item img {
+    max-width: 100%;
+  }
+  
