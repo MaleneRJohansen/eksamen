@@ -12,3 +12,7 @@ const fetchJSON = async (url) => {
     const { results } = await fetchJSON('https://pokeapi.co/api/v2/type?limit=18');
     return results;
   };
+  
+  export const fetchPokemonDetails = async (pokemon) => {
+    return fetchJSON(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+  };
