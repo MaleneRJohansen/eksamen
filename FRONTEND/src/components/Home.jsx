@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchPokemons, fetchTypes } from './api';
+import { Link } from 'react-router-dom';
 import Type from './Type'
 import Pokemon from './Pokemon'
 
@@ -24,8 +25,10 @@ function Home() {
         <div className="grid-container main-pokemons-grid">
           {pokemons.map((pokemon) => (
             <div key={pokemon.name} className="grid-item">
+              <Link to={`/pokemon/${pokemon.name}`}>
               <p>{pokemon.name}</p>
               <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+              </Link>
             </div>
           ))}
         </div>
