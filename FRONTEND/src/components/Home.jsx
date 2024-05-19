@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { fetchPokemons, fetchTypes } from './api';
 import Type from './Type'
 import Pokemon from './Pokemon'
 
@@ -7,28 +8,12 @@ function Home() {
   const [types, setTypes] = useState([]);
 
   useEffect(() => {
-    const fetchPokemons = async () => {
-      try {
-        const responsePokemons = await fetch('https://pokeapi.co/api/v2/pokemon?limit=9');
-        const dataPokemons = await responsePokemons.json();
-        
-        const pokemonDetails = await Promise.all(
-          dataPokemons.results.map(async (pokemon) => {
-            const response = await fetch(pokemon.url);
-            return response.json();
-          })
-        );
-        setPokemons(pokemonDetails);
-
-        const responseTypes = await fetch('https://pokeapi.co/api/v2/type?limit=18');
-        const dataTypes = await responseTypes.json();
-        setTypes(dataTypes.results);
-      } catch (err) {
-        console.error(err.message);
-      }
+    const loadData = async () => {
+      setPokemons(await fetchPokemons());
+      setTypes(await fetchTypes());
     };
 
-    fetchPokemons();
+    loadData();
   }, []);
 
   return (
@@ -58,4 +43,5 @@ function Home() {
     </>
   );
 }
+
 export default Home;
