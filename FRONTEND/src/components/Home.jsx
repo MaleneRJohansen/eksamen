@@ -3,8 +3,6 @@ import { fetchPokemons, fetchTypes } from './api';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { searchPokemons } from './searchFunction';
-import Type from './Type'
-import Pokemon from './Pokemon'
 
 function Home() {
   const [pokemons, setPokemons] = useState([]);
@@ -27,7 +25,8 @@ function Home() {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    const foundPokemon = pokemons.find(pokemon => pokemon.name.toLowerCase() === searchResult.toLowerCase());
+    const foundPokemon = pokemons.find(pokemon =>
+      pokemon.name.toLowerCase() === searchResult.toLowerCase());
     if (foundPokemon) {
       navigate(`/pokemon/${foundPokemon.name}`);
     } else {
@@ -41,7 +40,7 @@ function Home() {
       <form onSubmit={handleSearchSubmit}>
         <input
           type="text"
-          placeholder='Search for a Pokemon'
+          placeholder='Search for a Pokémon'
           value={searchResult}
           onChange={handleSearchChange}
         />
