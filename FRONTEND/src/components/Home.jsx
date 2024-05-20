@@ -1,51 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { fetchPokemons, fetchTypes } from './api';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { searchPokemons } from './searchFunction';
+import SearchResult from './SearchResult';
 
 function Home() {
   const [pokemons, setPokemons] = useState([]);
   const [types, setTypes] = useState([]);
-  const [searchResult, setSearchResult] = useState("");
-  const navigate = useNavigate();
 
   useEffect(() => {
     const loadData = async () => {
       setPokemons(await fetchPokemons());
       setTypes(await fetchTypes());
-    };
+    }
 
     loadData();
-  }, []);
-
-  const handleSearchChange = (event) => {
-    setSearchResult(event.target.value);
-  };
-
-  const handleSearchSubmit = (event) => {
-    event.preventDefault();
-    const foundPokemon = pokemons.find(pokemon =>
-      pokemon.name.toLowerCase() === searchResult.toLowerCase());
-    if (foundPokemon) {
-      navigate(`/pokemon/${foundPokemon.name}`);
-    } else {
-      alert('No Pokémon found with that name');
-    }
-  }
+  }, [])
 
   return (
     <>
       <h1>Home</h1>
-      <form onSubmit={handleSearchSubmit}>
-        <input
-          type="text"
-          placeholder='Search for a Pokémon'
-          value={searchResult}
-          onChange={handleSearchChange}
-        />
-        <button type="submit">Search</button>
-      </form>
+      <SearchResult pokemons={pokemons}/>
       <section>
         <h2>Main Pokemons</h2>
         <div className="grid-container main-pokemons-grid">
@@ -53,7 +27,7 @@ function Home() {
             <div key={pokemon.name} className="grid-item">
               <Link to={`/pokemon/${pokemon.name}`}>
               <p>{pokemon.name}</p>
-              <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+              <img src={pokemon.sprites.front_default} alt={pokemon.name}/>
               </Link>
             </div>
           ))}
@@ -64,13 +38,13 @@ function Home() {
         <div className="grid-container types-grid">
           {types.map((type) => (
             <div key={type.name} className="grid-item">
-              <p>{type.name}</p>
+              <Link to={`/types/${type.name}`}>{type.name}</Link>
             </div>
           ))}
         </div>
       </section>
     </>
-  );
+  )
 }
 
 export default Home;

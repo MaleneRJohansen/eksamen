@@ -10,7 +10,7 @@ function Pokemon() {
     const loadPokemonDetails = async () => {
       const data = await fetchPokemonDetails(pokemon).catch(err => console.error(err));
       setPokemonDetails(data);
-    };
+    }
 
     loadPokemonDetails();
   }, [pokemon]);
@@ -23,7 +23,7 @@ function Pokemon() {
       <p>Stats: {pokemonDetails?.stats.map(stat => `${stat.stat.name}: ${stat.base_stat}`).join(', ')}</p>
       <p>Abilities: {pokemonDetails?.abilities.map(ability => ability.ability.name).join(', ')}</p>
     </>
-  );
+  )
 }
 
 export default Pokemon;
