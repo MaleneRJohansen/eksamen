@@ -20,8 +20,8 @@ function Home() {
 
   return (
     <>
+      <h2>Main Pokemons</h2>
       <section className="pokemon-container">
-        <h2>Main Pokemons</h2>
           {pokemons.map((pokemon) => (
             <div key={pokemon.name} className="pokemon-item">
               <Link to={`/pokemon/${pokemon.name}`}>
