@@ -38,7 +38,7 @@ function Home() {
         <div className="grid-container types-grid">
           {types.map((type) => (
             <div key={type.name} className="grid-item">
-              <Link to={`/type/${type.name}`}>{type.name}</Link>
+              <Link to={`/types/${type.name}`}>{type.name}</Link>
             </div>
           ))}
         </div>
