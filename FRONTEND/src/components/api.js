@@ -16,3 +16,7 @@ const fetchJSON = async (url) => {
   export const fetchPokemonDetails = async (pokemon) => {
     return fetchJSON(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
   };
+
+  export const fetchTypeDetails = async (type) => {
+    return fetchJSON(`https://pokeapi.co/api/v2/type/${type}`)
+  }
