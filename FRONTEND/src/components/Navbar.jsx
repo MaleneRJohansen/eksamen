@@ -8,7 +8,7 @@ function Navbar() {
       <Link to="/teams">Teams</Link>
       <Link to="/searchresults/:pokemon">Search</Link>
     </nav>
-  );
+  )
 }
 
 export default Navbar;
