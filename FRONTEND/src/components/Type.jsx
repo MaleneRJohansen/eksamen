@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchTypeDetails } from './api'
+import '../styles/type.scss'
 
 function Type() {
   const { type } = useParams()
@@ -16,6 +17,7 @@ function Type() {
 
   return (
     <>
+    <section className='typeDetails'>
       {typeDetails ? (
         <>
           <h1>{typeDetails.name}</h1>
@@ -24,6 +26,7 @@ function Type() {
       ) : (
         <p>Loading...</p>
       )}
+    </section>
     </>
   )
 }
