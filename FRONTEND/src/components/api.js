@@ -9,7 +9,7 @@ const fetchJSON = async (url) => {
   }
   
   export const fetchTypes = async () => {
-    const { results } = await fetchJSON('https://pokeapi.co/api/v2/type?limit=18');
+    const { results } = await fetchJSON('https://pokeapi.co/api/v2/type');
     return results;
   }
   
