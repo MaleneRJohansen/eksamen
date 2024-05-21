@@ -20,7 +20,6 @@ function Home() {
 
   return (
     <>
-      <h1>Home</h1>
       <SearchResult pokemons={pokemons}/>
       <section>
         <h2>Main Pokemons</h2>

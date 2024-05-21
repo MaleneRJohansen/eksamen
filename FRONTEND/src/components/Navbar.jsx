@@ -6,8 +6,8 @@ function Navbar() {
   return (
     <>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/teams">Teams</Link>
+        <Link to="/">UIN POKEDEX</Link>
+        <Link to="/teams">TEAMS</Link>
       </nav>
     </>
   );
