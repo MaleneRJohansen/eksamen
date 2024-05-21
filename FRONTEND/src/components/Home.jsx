@@ -36,7 +36,7 @@ function Home() {
       </section>
       <section>
         <h2>Types</h2>
-        <section className="grid-container types-grid">
+        <section className="types-container">
           {types.map((type) => (
             <div key={type.name} className="type-item">
               <Link to={`/types/${type.name}`}>{type.name}</Link>
