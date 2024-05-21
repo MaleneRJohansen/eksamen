@@ -21,6 +21,7 @@ function Home() {
   return (
     <>
     <SearchResult pokemons={pokemons}/>
+      <SearchResult pokemons={pokemons}/>
       <section>
         <h2>Main Pokemons</h2>
         <section className="pokemon-container">
