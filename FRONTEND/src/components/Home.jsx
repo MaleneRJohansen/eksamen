@@ -38,14 +38,14 @@ function Home() {
         <h2>Types</h2>
         <section className="grid-container types-grid">
           {types.map((type) => (
-            <div key={type.name} className="grid-item">
+            <div key={type.name} className="type-item">
               <Link to={`/types/${type.name}`}>{type.name}</Link>
             </div>
           ))}
         </section>
       </section>
     </>
-  )
+  );
 }
 
 export default Home;
