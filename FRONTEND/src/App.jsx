@@ -1,16 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
 //import './App.css'
 import Home from './components/Home';
+import Navbar from './components/Navbar';
 import Pokemon from './components/Pokemon';
 import Type from './components/Type';
 import Teams from './components/Teams';
 import SearchResult from './components/SearchResult';
-import Header from './components/Header';
 
 function App() {
   return (
     <>
-      <Header/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pokemon/:pokemon" element={<Pokemon />} />
