@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchPokemons, fetchTypes } from './api';
 import { Link } from 'react-router-dom';
 import SearchResult from './SearchResult';
+import '../styles/home.scss';
 
 function Home() {
   const [pokemons, setPokemons] = useState([]);
@@ -22,26 +23,26 @@ function Home() {
       <SearchResult pokemons={pokemons}/>
       <section>
         <h2>Main Pokemons</h2>
-        <div className="grid-container main-pokemons-grid">
+        <section className="pokemon-container">
           {pokemons.map((pokemon) => (
-            <div key={pokemon.name} className="grid-item">
+            <div key={pokemon.name} className="pokemon-item">
               <Link to={`/pokemon/${pokemon.name}`}>
+              <img src={pokemon.sprites.front_default} alt={pokemon.name} />
               <p>{pokemon.name}</p>
-              <img src={pokemon.sprites.front_default} alt={pokemon.name}/>
               </Link>
             </div>
           ))}
-        </div>
+        </section>
       </section>
       <section>
         <h2>Types</h2>
-        <div className="grid-container types-grid">
+        <section className="grid-container types-grid">
           {types.map((type) => (
             <div key={type.name} className="grid-item">
               <Link to={`/types/${type.name}`}>{type.name}</Link>
             </div>
           ))}
-        </div>
+        </section>
       </section>
     </>
   )

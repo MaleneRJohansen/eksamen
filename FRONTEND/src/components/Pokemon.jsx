@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchPokemonDetails } from './api';
+import '../styles/home.scss';
 
 function Pokemon() {
   const { pokemon } = useParams();
