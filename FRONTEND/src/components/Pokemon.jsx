@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchPokemonDetails } from './api';
-import '../styles/pokemon.scss'
+import '../styles/pokemon.scss';
 
 function Pokemon() {
   const { pokemon } = useParams();
@@ -11,7 +11,7 @@ function Pokemon() {
     const loadPokemonDetails = async () => {
       const data = await fetchPokemonDetails(pokemon).catch(err => console.error(err));
       setPokemonDetails(data);
-    };
+    }
 
     loadPokemonDetails();
   }, [pokemon]);
@@ -26,7 +26,7 @@ function Pokemon() {
       <p>Abilities: {pokemonDetails?.abilities.map(ability => ability.ability.name).join(', ')}</p>
     </section>
     </>
-  );
+  )
 }
 
 export default Pokemon;

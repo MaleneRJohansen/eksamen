@@ -8,7 +8,6 @@ function Navbar() {
       <nav>
         <Link to="/">Home</Link>
         <Link to="/teams">Teams</Link>
-        <Link to="/searchresults/:pokemon">Search</Link>
       </nav>
     </>
   );

@@ -1,11 +1,29 @@
-import React from 'react'
+import React,  { useState } from 'react'
+import { searchPokemons } from './searchFunction';
 
-function SearchResult() {
+function SearchResult({pokemons}) {
+  const [searchRes, setSearchRes] = useState("");
+  const { searchForPokemon } = searchPokemons(pokemons);
+
+  const handleSearchChange = (event) => {
+    setSearchRes(event.target.value);
+  }
+  
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    searchForPokemon(searchRes); 
+  }
+
   return (
-    <>
-      <h1>Search results</h1>
-      <p>Skal vise søkeresultater eller at søket ikke finnes.</p>
-    </>
+    <form onSubmit={handleSearchSubmit}>
+      <input
+        type="text"
+        placeholder="Search for a Pokémon"
+        value={searchRes}
+        onChange={handleSearchChange}
+      />
+      <button type="submit">Search</button>
+    </form>
   )
 }
 
